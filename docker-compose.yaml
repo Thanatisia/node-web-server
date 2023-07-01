@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+    node-web-server:
+        image: thanatisia/node-server:latest
+        container_name: node-web-server
+        build:
+            ## (Optional) Build definitions
+            ## this is if you are building from source
+            ## Not necessary if you are pulling the image from Dockerhub (WIP)
+            context: .
+            dockerfile: docker/Dockerfile
+        tty: true # Equivalent to 'docker run -t'; Keeps the tty up even after finishing command
+        restart: unless-stopped
+        environment:
+            # Environment Variables
+            ## Uncomment these according to your needs
+            ## PROJECT_NAME: "[project-name]"
+            ## INDEX_NAME: "index-page-filename (No extension)"
+            ## HTTP_HOST: "domain/host-IP-address"
+            ## HTTP_PORT: [port-number-to-serve]
+        ports:
+            # Port mapping/forwarding from host system into container
+            # - [host-domain]:[host-system-port]:[container-port]
+        volumes:
+            # Mount volumes from host system into container
+            # - [host-system-volume]:[container-volume]:[permission]
+            # - "./path/to/webapp/[project-name]:/web/app/[project-name]
+        entrypoint: node server.js
