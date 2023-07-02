@@ -66,7 +66,7 @@ The aim is to make it simple for you to just place another project and start it 
 ## Documentation
 ### Serving webapp
 - Start up webserver on Bare Metal
-    - Using default folder and default index file 'app/index.html'
+    - Using default folders, default project and default index file 'app/index.html'
         ```console
         node server.js
         ```
@@ -78,6 +78,14 @@ The aim is to make it simple for you to just place another project and start it 
         ```console
         PAGE_EXT=php node server.js
         ```
+    - Serving default port number, default project with the files in the same directory as the index page
+        ```console
+        PUBLIC_FOLDER=app node server.js
+        ```
+    - Serving specific project, with custom port number and custom static files directory set at the same directory as the index page
+        ```console
+        PUBLIC_FOLDER=app HTTP_PORT=[port] PROJECT_NAME=[project-folder-name] node server.js
+        ```
 
 ### Usage
 
@@ -86,11 +94,12 @@ The aim is to make it simple for you to just place another project and start it 
 
 ## Configuration
 ### Environment Variables
-+ PAGE_EXT     : Specify the target web application's index page extension; Default: 'html'; Valid Values: ['html', 'php', 'aspx', etc]
-+ PROJECT_NAME : Specify the target project name you want to serve
-+ INDEX_NAME   : Webpage's index page name
-+ HTTP_HOST    : Server host domain
-+ HTTP_PORT    : Server port number
++ HTTP_HOST     : Server host domain
++ HTTP_PORT     : Server port number
++ INDEX_NAME    : Webpage's index page name
++ PAGE_EXT      : Specify the target web application's index page extension; Default: 'html'; Valid Values: ['html', 'php', 'aspx', etc]
++ PROJECT_NAME  : Specify the target project name you want to serve
++ PUBLIC_FOLDER : Specify the public/static files directory; Default: 'app/public/'
 
 ### docker-compose configuration
 - Build definitions
