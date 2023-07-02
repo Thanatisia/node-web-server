@@ -55,6 +55,8 @@ The aim is to make it simple for you to just place another project and start it 
 - Using Docker
     + docker
     + docker(-compose) : Optional; Not required if docker >= 24.0 as 'compose' has been added to docker CLI options
+- Using NodeJS
+    + mime-types
 
 ### Installing
 - For information regarding Docker manual setup, please refer to the [docker folder's README](docker)
@@ -113,5 +115,6 @@ The aim is to make it simple for you to just place another project and start it 
 
 ## References
 + DigitalOcean - Tutorials - How to create a webserver in NodeJS with the http module: https://www.digitalocean.com/community/tutorials/how-to-create-a-web-server-in-node-js-with-the-http-module
++ AbstractAPI - How to get a client IP address in NodeJS: https://www.abstractapi.com/guides/how-to-get-a-client-ip-address-in-node-js
 
 ## Remarks

@@ -17,7 +17,9 @@ WORKDIR /web/
 RUN DEBIAN_FRONTEND=noninteractive apt update -y && \
     apt upgrade -y && \
     ## Install other dependencies \
-    apt install -y vim git nodejs
+    apt install -y vim git nodejs npm && \
+    ## Install npm/NodeJS dependencies
+    npm install -g mime-types
 
 ## Expose Ports
 EXPOSE 8080
