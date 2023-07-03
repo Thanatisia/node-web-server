@@ -1,5 +1,20 @@
 # Node Web Server with Docker
 
+## Setup
+### Dependencies
++ docker
+
+### Pre-Requisites
+- Symlink/copy your Dockerfile image of choice to be the primary Dockerfile
+    - Using symlink
+        ```console
+        ln -sf Dockerfile.<image> Dockerfile
+        ```
+    - Copying
+        ```console
+        cp Dockerfile.<image> Dockerfile
+        ```
+
 ## Documentation
 ### Usage
 - Build Dockerfile image

@@ -1,0 +1,35 @@
+# Dockerfile for NodeJS Web server
+
+## Pull Base Image
+FROM alpine:latest
+
+## Set Environment Variables
+### ENV PAGE_EXT="html"
+### ENV PROJECT_NAME="project"
+
+## Copy dependencies and required files
+COPY src/server.js /web/server.js
+
+## Set Current working directory
+WORKDIR /web/
+
+## Update package manager and packages
+RUN apk update && \
+    apk upgrade && \
+    ## Install other dependencies \
+    apk add vim git nodejs npm bash && \
+    ## Install npm/NodeJS dependencies \
+    npm install -g mime-types
+
+## Expose Ports
+EXPOSE 8080
+
+## Set default Shell
+SHELL ["/bin/bash"]
+
+## Set Entry Point 
+ENTRYPOINT "/bin/bash"
+
+## Set startup Command
+## CMD ["node", "server.js"]
+
